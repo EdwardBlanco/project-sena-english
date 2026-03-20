@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="app-container">
-        
+
         <header class="app-header">
             <div class="logo">
                 <div class="logo-box">
@@ -46,14 +48,14 @@
         </header>
 
         <main class="app-main">
-            
+
             <section class="overview-section">
                 <h2>OVERVIEW</h2>
                 <div class="overview-grid">
                     <div class="metric-card">
                         <div class="metric-info">
                             <h3 class="metric-value">12</h3>
-                            <p class="metric-label">Active Pipelines</p>
+                            <p class="metric-label">Active Processes in Pipeline</p>
                         </div>
                         <div class="metric-icon metric-blue">▶</div>
                     </div>
@@ -87,7 +89,31 @@
                     <a href="#" class="view-all">View All</a>
                 </div>
                 <div class="stages-grid">
-                    
+
+
+                    <div class="stage-card">
+                        <div class="stage-header">
+                            <div class="stage-title">
+                                <span class="icon pink-icon">📊</span>
+                                <h3>Static Analysis</h3>
+                            </div>
+                            <span class="badge badge-failed">Failed</span>
+                        </div>
+                        <div class="stage-body">
+                            <ul class="log-list">
+                                <li class="log-muted">Analyzing src/components...</li>
+                                <li class="log-error">❌ Error: Unused variable 'x'</li>
+                                <li class="log-detail">at line 42:15 in Widget.tsx</li>
+                                <li class="log-error">❌ Error: Missing dependency</li>
+                                <li class="log-detail">at line 10:2 in useEffect</li>
+                            </ul>
+                            <p class="log-error summary-text">Build failed with 2 errors.</p>
+                        </div>
+                        <div class="stage-footer">
+                            <button class="btn btn-ghost"><span class="btn-icon">⚙</span> View Logs</button>
+                        </div>
+                    </div>
+
                     <div class="stage-card">
                         <div class="stage-header">
                             <div class="stage-title">
@@ -131,29 +157,6 @@
                         </div>
                         <div class="stage-footer">
                             <button class="btn btn-primary"><span class="btn-icon">🛑</span> Stop Execution</button>
-                        </div>
-                    </div>
-
-                    <div class="stage-card">
-                        <div class="stage-header">
-                            <div class="stage-title">
-                                <span class="icon pink-icon">📊</span>
-                                <h3>Static Analysis</h3>
-                            </div>
-                            <span class="badge badge-failed">Failed</span>
-                        </div>
-                        <div class="stage-body">
-                            <ul class="log-list">
-                                <li class="log-muted">Analyzing src/components...</li>
-                                <li class="log-error">❌ Error: Unused variable 'x'</li>
-                                <li class="log-detail">at line 42:15 in Widget.tsx</li>
-                                <li class="log-error">❌ Error: Missing dependency</li>
-                                <li class="log-detail">at line 10:2 in useEffect</li>
-                            </ul>
-                            <p class="log-error summary-text">Build failed with 2 errors.</p>
-                        </div>
-                        <div class="stage-footer">
-                            <button class="btn btn-ghost"><span class="btn-icon">⚙</span> View Logs</button>
                         </div>
                     </div>
 
@@ -218,4 +221,5 @@
 
     </div>
 </body>
+
 </html>
