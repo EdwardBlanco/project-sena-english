@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Omega - Tutorial (Fase 4)</title>
+    <!-- Cargando fuente externa para darle mejor apariencia -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-box">
+                    <span class="logo-icon">💠</span>
+                </div>
+                <h1>Project Omega</h1>
+                <span class="version-badge"><span class="badge-dot"></span> v2.4.0 (Stable)</span>
+            </div>
+
+            <!-- Navegación principal -->
+            <nav class="main-nav">
+                <a href="#" class="nav-item active-nav">
+                    <span class="nav-icon">⚏</span>
+                    <span class="nav-text">Overview</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚷</span> <!-- Pipeline icon -->
+                    <span class="nav-text">Pipelines</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">🖧</span> <!-- Server icon -->
+                    <span class="nav-text">Envs</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">⚙</span> <!-- Settings gear -->
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="notification-btn" aria-label="Notifications">🔔</button>
+            </div>
+        </header>
+
+        <main class="app-main">
+            
+            <section class="overview-section">
+                <h2>OVERVIEW</h2>
+                <div class="overview-grid">
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3 class="metric-value">12</h3>
+                            <p class="metric-label">Active Pipelines</p>
+                        </div>
+                        <div class="metric-icon metric-blue">▶</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3 class="metric-value">98%</h3>
+                            <p class="metric-label">Success Rate</p>
+                        </div>
+                        <div class="metric-icon metric-green">✔</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3 class="metric-value">3</h3>
+                            <p class="metric-label">Failed Jobs</p>
+                        </div>
+                        <div class="metric-icon metric-red">⚠</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-info">
+                            <h3 class="metric-value">4m</h3>
+                            <p class="metric-label">Avg. Duration</p>
+                        </div>
+                        <div class="metric-icon metric-yellow">⏱</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stages-section">
+                <div class="section-header">
+                    <h2>ACTIVE STAGES</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                <div class="stages-grid">
+                    
+                    <div class="stage-card">
+                        <div class="stage-header">
+                            <div class="stage-title">
+                                <span class="icon purple-icon">🐞</span>
+                                <h3>Unit Testing</h3>
+                            </div>
+                            <span class="badge badge-success">Success</span>
+                        </div>
+                        <div class="stage-body">
+                            <ul class="log-list">
+                                <li class="log-success">✔ main.test.ts (45ms)</li>
+                                <li class="log-success">✔ auth.test.ts (120ms)</li>
+                                <li class="log-success">✔ utils.test.ts (15ms)</li>
+                                <li class="log-info">ℹ Running coverage report...</li>
+                                <li class="log-accent">Statements: 98.5% (120/122)</li>
+                            </ul>
+                            <p class="log-success summary-text">Done in 2.4s.</p>
+                        </div>
+                        <div class="stage-footer">
+                            <button class="btn btn-ghost"><span class="btn-icon">↺</span> Rerun Step</button>
+                        </div>
+                    </div>
+
+                    <div class="stage-card active-card">
+                        <div class="stage-header">
+                            <div class="stage-title">
+                                <span class="icon orange-icon">🔨</span>
+                                <h3>Build Process</h3>
+                            </div>
+                            <span class="badge badge-running"><span class="dot-running"></span> Running</span>
+                        </div>
+                        <div class="stage-body">
+                            <ul class="log-list">
+                                <li class="log-muted">[10:42:01] Starting build...</li>
+                                <li class="log-muted">[10:42:02] Compiling modules...</li>
+                                <li class="log-warning">⚠ Warning: 'fs' is deprecated</li>
+                                <li class="log-muted">[10:42:05] Optimizing assets...</li>
+                                <li class="log-muted">[10:42:08] Minifying bundle...</li>
+                                <li class="loader-block">█</li>
+                            </ul>
+                        </div>
+                        <div class="stage-footer">
+                            <button class="btn btn-primary"><span class="btn-icon">🛑</span> Stop Execution</button>
+                        </div>
+                    </div>
+
+                    <div class="stage-card">
+                        <div class="stage-header">
+                            <div class="stage-title">
+                                <span class="icon pink-icon">📊</span>
+                                <h3>Static Analysis</h3>
+                            </div>
+                            <span class="badge badge-failed">Failed</span>
+                        </div>
+                        <div class="stage-body">
+                            <ul class="log-list">
+                                <li class="log-muted">Analyzing src/components...</li>
+                                <li class="log-error">❌ Error: Unused variable 'x'</li>
+                                <li class="log-detail">at line 42:15 in Widget.tsx</li>
+                                <li class="log-error">❌ Error: Missing dependency</li>
+                                <li class="log-detail">at line 10:2 in useEffect</li>
+                            </ul>
+                            <p class="log-error summary-text">Build failed with 2 errors.</p>
+                        </div>
+                        <div class="stage-footer">
+                            <button class="btn btn-ghost"><span class="btn-icon">⚙</span> View Logs</button>
+                        </div>
+                    </div>
+
+                    <!-- Integration - Pendiente -->
+                    <div class="stage-card pending-card">
+                        <div class="stage-header">
+                            <div class="stage-title">
+                                <span class="icon teal-icon">🔄</span>
+                                <h3>Integration</h3>
+                            </div>
+                            <span class="badge badge-pending">Pending</span>
+                        </div>
+                        <div class="stage-body flex-center">
+                            <div class="pending-state">
+                                <div class="dots">...</div>
+                                <p>Waiting for Build completion...</p>
+                            </div>
+                        </div>
+                        <div class="stage-footer">
+                            <button class="btn btn-action"><span class="btn-icon">▶</span> Execute Step</button>
+                        </div>
+                    </div>
+
+                    <!-- Prod Deploy - Ready -->
+                    <div class="stage-card">
+                        <div class="stage-header">
+                            <div class="stage-title">
+                                <span class="icon green-icon">🚀</span>
+                                <h3>Prod Deploy</h3>
+                            </div>
+                            <span class="badge badge-ready">Ready</span>
+                        </div>
+                        <div class="stage-body">
+                            <ul class="log-list">
+                                <li>Target: <span class="log-accent">aws-us-east-1</span></li>
+                                <li>Previous Ver: <span class="log-accent">v2.3.9</span></li>
+                                <li>Artifact: <span class="log-accent">build-8392.zip</span></li>
+                                <li class="log-warning summary-text">⚠ Requires Approval</li>
+                                <li class="log-muted">Waiting for user input...</li>
+                            </ul>
+                        </div>
+                        <div class="stage-footer">
+                            <button class="btn btn-success"><span class="btn-icon">🚀</span> Deploy Now</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 Project Omega.</p>
+                <div class="footer-links">
+                    <a href="#">GitHub</a>
+                    <a href="#">Documentación</a>
+                    <a href="#">Soporte</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+</html>
